@@ -122,13 +122,6 @@ function clamav(){
 
 
 
-
-
-
-
-
-
-
 	else
 		clear
 		echo -e "\n\n${rC} [Â¡]${endC}${grC} Sistema Operativo:${endC}${pC} $osc${endC}"
@@ -184,12 +177,15 @@ function epel(){
 	echo -e "\n\n${rC} [Â¡]${endC}${grC} Sistema Operativo:${endC}${pC} $osc${endC}"
 	echo -e "\n\t${yC} [-]${endC}${grC} Verificando el servicio${endC}${bC} Epel ${endC}"
 	sleep .5
+	clear
 	echo -e "\n\n${rC} [Â¡]${endC}${grC} Sistema Operativo:${endC}${pC} $osc${endC}"
 	echo -e "\n\t${yC} [/]${endC}${grC} Verificando el servicio${endC}${bC} Epel ${endC}"
 	sleep .5
+	cliear
 	echo -e "\n\n${rC} [Â¡]${endC}${grC} Sistema Operativo:${endC}${pC} $osc${endC}"
 	echo -e "\n\t${yC} [|]${endC}${grC} Verificando el servicio${endC}${bC} Epel ${endC}"
 	sleep .5
+	clear
 	echo -e "\n\n${rC} [Â¡]${endC}${grC} Sistema Operativo:${endC}${pC} $osc${endC}"
 	echo -e "\n\t${yC} [\]${endC}${grC} Verificando el servicio${endC}${bC} Epel ${endC}"
 	sleep .5
@@ -247,6 +243,9 @@ function updateOs(){
 		sleep 1
 
 		sudo apt-get update -y >/dev/null 2>&1
+
+		echo -e "\n${rC}[!]${endC}${bC} Los repositorios estan Actualizados.${endC}"
+
 	else
 		clear
 		echo -e "\n\n${rC} [Â¡]${endC}${grC} Sistema Operativo:${endC}${pC} $osc${endC}"
@@ -269,6 +268,8 @@ function updateOs(){
 		echo -e "\n\t${yC} [-]${endC}${grC} Actualizando los repositorios del sistema operativo${endC}"
 		sleep 1
 		sudo yum update -y >/dev/null 2>&1
+
+		echo -e "\n${rC}[!]${endC}${bC} Los repositorios estan Actualizados.${endC}"
 	fi
 
 
@@ -288,11 +289,12 @@ function start(){
 	sleep .5
 
 	Os=$(uname -a)
+	Cos=$(cat /etc/os-release | grep -v "CentOs")
 
 	OsUbu=$(echo $Os | grep "Ubuntu")
 	checkUbu=$?
 #	checkUbu
-	OsCent=$(echo $Os | grep "CentOS")
+	OsCent=$(echo $Cos | grep "CentOS")
 	checkCent=$?
 #	echo $checkCent
 
