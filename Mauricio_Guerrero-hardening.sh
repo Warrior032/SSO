@@ -190,29 +190,18 @@ function epel(){
 	echo -e "\n\t${yC} [\]${endC}${grC} Verificando el servicio${endC}${bC} Epel ${endC}"
 	sleep .5
 
-	if [[ $checkEpel == 0 ]]; then
-		clear
-		echo -e "\n\n${rC} [Â¡]${endC}${grC} Sistema Operativo:${endC}${pC} $osc${endC}"
-		echo -e "\n\t${yC} [*]${endC}${grC} El servicio${endC}${bC} Epel ${endC}${grC} no esta intalado${endC}"
+	clear
+	echo -e "\n\n${rC} [Â¡]${endC}${grC} Sistema Operativo:${endC}${pC} $osc${endC}"
+	echo -e "\n\t${yC} [*]${endC}${grC} El servicio${endC}${bC} Epel ${endC}${grC} no esta intalado${endC}"
 
-		echo -e "\n\t${bC} [*]${endC}${gC} Instalando Dependencia ...${endC}"
+	echo -e "\n\t${bC} [*]${endC}${gC} Instalando Dependencia ...${endC}"
 
-		wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm >/dev/null 2>&1
-		sudo yum install epel-release-latest-7.noarch.rpm -y >/dev/null 2>&1
+	wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm >/dev/null 2>&1
+	sudo yum install epel-release-latest-7.noarch.rpm -y >/dev/null 2>&1
 
-		echo -e "\n\n${yC} [*]${endC}${grC} Verificando Dependencia Epel:${endC} ${yC} ...... ${endC}${bC}[V]${endC}"
-		sleep 3
-		echo -e "\n\t${rC}[*]${endC} ${gC}La Dependencia ${endC}${bC}Epel${endC} ${gC}esta instalado.${endC}"
-
-
-	else
-
-		echo -e "\n\n${yC} [*]${endC}${grC} Verificando Dependencia Epel:${endC} ${yC} ...... ${endC}${bC}[V]${endC}"
-		sleep 3
-		echo -e "\n\t${rC}[*]${endC} ${gC}La Dependencia ${endC}${bC}Epel${endC} ${gC}esta instalado.${endC}"
-
-
-	fi
+	echo -e "\n\n${yC} [*]${endC}${grC} Verificando Dependencia Epel:${endC} ${yC} ...... ${endC}${bC}[V]${endC}"
+	sleep 3
+	echo -e "\n\t${rC}[*]${endC} ${gC}La Dependencia ${endC}${bC}Epel${endC} ${gC}esta instalado.${endC}"
 
 	updateOs
 }
